@@ -587,26 +587,23 @@
             box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4);
         }
         
-        .stat-number {
-            font-size: 4rem;
-            font-weight: 900;
-            background: var(--gradient-1);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            line-height: 1;
-            margin-bottom: 1rem;
-            position: relative;
-            z-index: 2; /* Increased from 1 to 2 */
-        }
+.stat-number {
+    font-size: 4rem;
+    font-weight: 900;
+    color: white; /* Changed from gradient text to white */
+    line-height: 1;
+    margin-bottom: 1rem;
+    position: relative;
+    z-index: 2;
+}
         
-        .stat-text {
-            color: var(--gray-light);
-            font-weight: 600;
-            font-size: 1.2rem;
-            position: relative;
-            z-index: 2; /* Increased from 1 to 2 */
-        }
+.stat-text {
+    color: white; /* Changed from var(--gray-light) to white */
+    font-weight: 600;
+    font-size: 1.2rem;
+    position: relative;
+    z-index: 2;
+}
         
         /* Skills Section */
         .skills-section {
@@ -1794,10 +1791,6 @@
                         <div class="contact-icon">
                             <i class="fas fa-phone"></i>
                         </div>
-                        <div class="contact-details">
-                            <h3>Phone</h3>
-                            <p>+91 63546 97201</p>
-                        </div>
                     </div>
                     <div class="contact-item">
                         <div class="contact-icon">
@@ -2072,3 +2065,4 @@
     </script>
 </body>
 </html>
+
