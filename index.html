@@ -9,6 +9,91 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
     <style>
+        /* ADD ONLY DOWNLOAD BUTTON STYLES - KEEP EVERYTHING ELSE EXACTLY THE SAME */
+        .resume-download-btn {
+            position: fixed;
+            bottom: 40px;
+            left: 40px;
+            width: 70px;
+            height: 70px;
+            background: var(--gradient-1);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            cursor: pointer;
+            z-index: 998;
+            opacity: 0.9;
+            transform: translateY(0);
+            transition: all 0.5s;
+            box-shadow: 0 15px 35px rgba(59, 130, 246, 0.4);
+            border: none;
+            outline: none;
+            text-decoration: none;
+        }
+        
+        .resume-download-btn:hover {
+            opacity: 1;
+            transform: translateY(-10px) scale(1.1);
+            box-shadow: 0 20px 45px rgba(59, 130, 246, 0.5);
+            background: var(--gradient-1);
+        }
+        
+        .resume-download-btn span {
+            position: absolute;
+            top: -40px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--gradient-1);
+            color: white;
+            padding: 8px 15px;
+            border-radius: 10px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            white-space: nowrap;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s;
+            pointer-events: none;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+        
+        .resume-download-btn span::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-left: 8px solid transparent;
+            border-right: 8px solid transparent;
+            border-top: 8px solid var(--primary);
+        }
+        
+        .resume-download-btn:hover span {
+            opacity: 1;
+            visibility: visible;
+            top: -50px;
+        }
+        
+        /* Mobile adjustments for download button */
+        @media (max-width: 768px) {
+            .resume-download-btn {
+                bottom: 100px;
+                left: 20px;
+                width: 60px;
+                height: 60px;
+                font-size: 1.5rem;
+            }
+            
+            .resume-download-btn span {
+                font-size: 0.8rem;
+                padding: 6px 12px;
+            }
+        }
+
+        /* KEEP EVERYTHING ELSE EXACTLY THE SAME FROM YOUR ORIGINAL CSS */
         :root {
             --primary: #3b82f6;
             --primary-dark: #2563eb;
@@ -590,7 +675,7 @@
 .stat-number {
     font-size: 4rem;
     font-weight: 900;
-    color: white; /* Changed from gradient text to white */
+    color: white;
     line-height: 1;
     margin-bottom: 1rem;
     position: relative;
@@ -598,7 +683,7 @@
 }
         
 .stat-text {
-    color: white; /* Changed from var(--gray-light) to white */
+    color: white;
     font-weight: 600;
     font-size: 1.2rem;
     position: relative;
@@ -1357,26 +1442,32 @@
     <!-- Particles Background -->
     <div id="particles-js"></div>
 
-<!-- Header & Navigation -->
-<header id="header">
-    <div class="container">
-        <nav class="navbar">
-            <a href="#home" class="logo">
-                <i class="fas fa-terminal"></i>
-                <span>Shlok</span>
-            </a>
-            <ul class="nav-links" id="navLinks">
-                <li><a href="#home" class="nav-link"><i class="fas fa-home"></i>Home</a></li>
-                <li><a href="#about" class="nav-link"><i class="fas fa-user"></i>About</a></li>
-                <li><a href="#skills" class="nav-link"><i class="fas fa-code"></i>Skills</a></li>
-                <li><a href="#experience" class="nav-link"><i class="fas fa-briefcase"></i>Experience</a></li>
-                <li><a href="#education" class="nav-link"><i class="fas fa-graduation-cap"></i>Education</a></li>
-                <li><a href="#projects" class="nav-link"><i class="fas fa-project-diagram"></i>Projects</a></li>
-                <li><a href="#contact" class="nav-link"><i class="fas fa-envelope"></i>Contact</a></li>
-            </ul>
-        </nav>
-    </div>
-</header>
+    <!-- Header & Navigation -->
+    <header id="header">
+        <div class="container">
+            <nav class="navbar">
+                <a href="#home" class="logo">
+                    <i class="fas fa-terminal"></i>
+                    <span>Shlok</span>
+                </a>
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="#home" class="nav-link"><i class="fas fa-home"></i>Home</a></li>
+                    <li><a href="#about" class="nav-link"><i class="fas fa-user"></i>About</a></li>
+                    <li><a href="#skills" class="nav-link"><i class="fas fa-code"></i>Skills</a></li>
+                    <li><a href="#experience" class="nav-link"><i class="fas fa-briefcase"></i>Experience</a></li>
+                    <li><a href="#education" class="nav-link"><i class="fas fa-graduation-cap"></i>Education</a></li>
+                    <li><a href="#projects" class="nav-link"><i class="fas fa-project-diagram"></i>Projects</a></li>
+                    <li><a href="#contact" class="nav-link"><i class="fas fa-envelope"></i>Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Resume Download Button (Floating) -->
+    <a href="Portfolio resume.pdf" download="Shlok_Kharva_Resume.pdf" class="resume-download-btn">
+        <i class="fas fa-download"></i>
+        <span>Download Resume</span>
+    </a>
 
     <!-- Hero Section -->
     <section class="hero" id="home">
@@ -1385,13 +1476,16 @@
                 <div class="hero-text">
                     <h1>Hi, I'm <span class="gradient-text">Shlok Kharva</span></h1>
                     <h2><span class="typing-text" id="typing-text"></span></h2>
-                    <p>Passionate Computer Engineering student specializing in Web Development, Machine Learning, and Software Engineering. I build innovative solutions and continuously expand my expertise through real-world projects and internships.</p>
+                    <p>I am a third-year B.E. student in Computer Engineering, having previously earned a Diploma in Computer Engineering. I have a strong interest in machine learning and software development, and I am eager to expand my knowledge and gain practical experience through real world projects and internships.</p>
                     <div class="btn-group">
                         <a href="#contact" class="btn">
                             <i class="fas fa-paper-plane"></i> Get In Touch
                         </a>
                         <a href="#projects" class="btn btn-outline">
                             <i class="fas fa-code"></i> View Projects
+                        </a>
+                        <a href="shlok resume.pdf" download="Shlok_Kharva_Resume.pdf" class="btn">
+                            <i class="fas fa-download"></i> Download Resume
                         </a>
                     </div>
                 </div>
@@ -1402,7 +1496,8 @@
                     </div>
                     <p style="margin-top: 2.5rem; color: var(--gray); font-size: 1.1rem;">
                         <i class="fas fa-map-marker-alt"></i> Vadodara, Gujarat • 
-                        <i class="fas fa-graduation-cap"></i> SVIT Vasad
+                        <i class="fas fa-graduation-cap"></i> SVIT Vasad •
+                        <i class="fas fa-phone"></i> 9512929918
                     </p>
                 </div>
             </div>
@@ -1416,82 +1511,67 @@
                 <h2 data-text="About Me">About Me</h2>
             </div>
             <div class="section-subtitle">
-                A dedicated Computer Engineering student with hands-on experience in web development, mobile applications, and machine learning. Passionate about creating innovative solutions and continuously learning new technologies.
+                I am a third-year B.E. student in Computer Engineering, having previously earned a Diploma in Computer Engineering. I have a strong interest in machine learning and software development, and I am eager to expand my knowledge and gain practical experience through real world projects and internships.
             </div>
             
             <div class="stats-container">
                 <div class="stat-item">
-                    <div class="stat-number">2+</div>
+                    <div class="stat-number">2</div>
                     <div class="stat-text">Internships</div>
                 </div>
                 <div class="stat-item">
-                    <div class="stat-number">10+</div>
+                    <div class="stat-number">12+</div>
                     <div class="stat-text">Projects</div>
                 </div>
                 <div class="stat-item">
-                    <div class="stat-number">2</div>
+                    <div class="stat-number">3</div>
                     <div class="stat-text">Hackathons</div>
                 </div>
                 <div class="stat-item">
-                    <div class="stat-number">10+</div>
-                    <div class="stat-text">Technologies</div>
+                    <div class="stat-number">12+</div>
+                    <div class="stat-text">Certifications</div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Skills Section -->
+    <!-- Skills Section - Updated with resume data -->
     <section class="skills-section" id="skills">
         <div class="container">
             <div class="section-title">
-                <h2 data-text="Technical Skills">Technical Skills</h2>
+                <h2 data-text="Skills">Skills</h2>
             </div>
             <div class="section-subtitle">
-                A comprehensive skill set spanning across web development, mobile applications, machine learning, and software engineering tools.
+                A comprehensive skill set as listed in my resume, spanning programming languages, developer tools, databases, and soft skills.
             </div>
             <div class="skills-container">
                 <div class="skill-card">
                     <i class="fas fa-code"></i>
-                    <h3>Web Development</h3>
-                    <p>HTML5, CSS3, JavaScript, PHP, Bootstrap, Responsive Design, Frontend & Backend Development</p>
-                </div>
-                <div class="skill-card">
-                    <i class="fab fa-android"></i>
-                    <h3>Android Development</h3>
-                    <p>Android Studio, Java, XML, REST APIs, Database Management, UI/UX Design, Mobile App Architecture</p>
-                </div>
-                <div class="skill-card">
-                    <i class="fas fa-robot"></i>
-                    <h3>Machine Learning</h3>
-                    <p>Python, Scikit-learn, Pandas, NumPy, Data Analysis, ML Models, Data Visualization, Predictive Analytics</p>
-                </div>
-                <div class="skill-card">
-                    <i class="fas fa-database"></i>
-                    <h3>Database Management</h3>
-                    <p>SQL, MongoDB, MySQL, Database Design, CRUD Operations, Data Modeling, Query Optimization</p>
+                    <h3>Languages</h3>
+                    <p>Basic Java, MySQL, HTML, CSS, Python, PHP, NoSQL, Bootstrap, Flask</p>
                 </div>
                 <div class="skill-card">
                     <i class="fas fa-tools"></i>
-                    <h3>Development Tools</h3>
-                    <p>Git, VS Code, Android Studio, Microsoft Office Suite, Postman, Docker, Agile Methodologies</p>
+                    <h3>Developer Tools</h3>
+                    <p>Git, Google Cloud Platform, VS Code, PyCharm, Github, MongoDB, Android Studio</p>
                 </div>
                 <div class="skill-card">
-                    <i class="fas fa-tasks"></i>
-                    <h3>Project Management</h3>
-                    <p>Agile Methodology, Team Leadership, Problem Solving, Communication, Project Planning, Documentation</p>
+                    <i class="fas fa-users"></i>
+                    <h3>Soft Skills</h3>
+                    <p>Team Management, Effective communication, Leadership, Time Management</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Experience Section -->
+    <!-- Experience Section - Updated with exact resume details -->
     <section class="experience-section" id="experience">
         <div class="container">
             <div class="section-title">
-                <h2 data-text="Work Experience">Work Experience</h2>
+                <h2 data-text="Experience/Internship">Experience/Internship</h2>
             </div>
             <div class="section-subtitle">
-                Hands-on experience gained through internships and practical projects in the tech industry.
+                Hands-on experience gained through internships as mentioned in my resume.
             </div>
             <div class="experience-container">
                 <div class="experience-card">
@@ -1506,12 +1586,12 @@
                     </div>
                     <div class="exp-details">
                         <ul>
-                            <li>Mastered Android Studio fundamentals and mobile app development lifecycle</li>
-                            <li>Implemented SQLite database management for persistent app data storage</li>
-                            <li>Integrated RESTful API calls for real-time data fetching and synchronization</li>
-                            <li>Developed secure user authentication with login and validation systems</li>
-                            <li>Designed intuitive app interfaces using XML with modern UI/UX principles</li>
-                            <li>Built and deployed a complete Task Manager System with full CRUD operations</li>
+                            <li>Learned basics of Android Studio development environment</li>
+                            <li>Implemented database management systems for data persistence</li>
+                            <li>Integrated API calls for external data fetching</li>
+                            <li>Developed login and validation systems for user authentication</li>
+                            <li>Designed app interfaces and user experience components</li>
+                            <li>Built a Task Manager System with Login, Registration, and Validation features</li>
                         </ul>
                     </div>
                 </div>
@@ -1528,11 +1608,10 @@
                     </div>
                     <div class="exp-details">
                         <ul>
-                            <li>Developed responsive, cross-browser compatible websites using HTML5, CSS3, JavaScript</li>
-                            <li>Created modern UI designs using Bootstrap framework for enhanced user experience</li>
-                            <li>Built a secure login and registration system with form validation</li>
-                            <li>Collaborated with team members using Git for version control and project management</li>
-                            <li>Gained experience in website deployment, hosting, and maintenance procedures</li>
+                            <li>Worked on website design and development projects</li>
+                            <li>Used HTML, CSS and Bootstrap for responsive web design</li>
+                            <li>Created a simple login and register page as a project</li>
+                            <li>Gained practical experience in front-end web development</li>
                         </ul>
                     </div>
                 </div>
@@ -1540,32 +1619,31 @@
         </div>
     </section>
 
-    <!-- Education Section -->
+    <!-- Education Section - Updated with exact resume details -->
     <section class="education-section" id="education">
         <div class="container">
             <div class="section-title">
                 <h2 data-text="Education">Education</h2>
             </div>
             <div class="section-subtitle">
-                Academic journey that has provided a strong foundation in computer engineering principles and practical skills.
+                Academic journey as detailed in my resume, showing strong foundation in computer engineering.
             </div>
             <div class="education-container">
                 <div class="education-card">
                     <div class="edu-header">
                         <div>
-                            <div class="edu-title">Bachelor of Engineering in Computer Engineering</div>
+                            <div class="edu-title">Bachelor of Computer Engineering (3rd Year Pursuing)</div>
                             <div class="edu-institute">
-                                <i class="fas fa-university"></i> Sardar Vallabhbhai Patel Institute of Technology (SVIT), Vasad
+                                <i class="fas fa-university"></i> Sardar Vallabhbhai Institute of Technology, Vasad
                             </div>
                         </div>
-                        <div class="edu-date">2024 - Pursuing</div>
+                        <div class="edu-date">CPI: 7.41</div>
                     </div>
                     <div class="edu-details">
                         <ul>
-                            <li>Currently pursuing advanced studies in software engineering, algorithms, and machine learning</li>
-                            <li>Expected graduation: 2026 with focus on full-stack development and AI/ML</li>
-                            <li>Active participant in hackathons and technical workshops</li>
-                            <li>Coursework includes Data Structures, Algorithms, Database Systems, Web Technologies</li>
+                            <li>Currently in 3rd year of Computer Engineering program</li>
+                            <li>Maintaining a CPI of 7.41</li>
+                            <li>Focusing on software development, machine learning, and computer science fundamentals</li>
                         </ul>
                     </div>
                 </div>
@@ -1578,34 +1656,13 @@
                                 <i class="fas fa-university"></i> Shree K.J Polytechnic, Bharuch
                             </div>
                         </div>
-                        <div class="edu-date">Graduated 2024</div>
+                        <div class="edu-date">Aug 2021 - Aug 2024 • CPI: 7.56</div>
                     </div>
                     <div class="edu-details">
                         <ul>
-                            <li>Graduated with distinction (7.56 CGPA) under Gujarat Technological University</li>
-                            <li>Gained comprehensive practical knowledge in programming, software development, and system design</li>
-                            <li>Completed multiple capstone projects in web development, databases, and software engineering</li>
-                            <li>Developed strong foundation in computer fundamentals and problem-solving skills</li>
-                        </ul>
-                    </div>
-                </div>
-                
-                <div class="education-card">
-                    <div class="edu-header">
-                        <div>
-                            <div class="edu-title">Secondary School (SSC)</div>
-                            <div class="edu-institute">
-                                <i class="fas fa-school"></i> Baroda High School, Bagikhana
-                            </div>
-                        </div>
-                        <div class="edu-date">Graduated 2021</div>
-                    </div>
-                    <div class="edu-details">
-                        <ul>
-                            <li>Completed with 65% under Gujarat Secondary Education Board (GSEB)</li>
-                            <li>Developed keen interest in computer science and emerging technologies</li>
-                            <li>Active participation in science exhibitions, technical events, and coding competitions</li>
-                            <li>Laid foundation for analytical thinking and problem-solving abilities</li>
+                            <li>Completed Diploma with CPI of 7.56</li>
+                            <li>Gained practical knowledge in computer engineering fundamentals</li>
+                            <li>Developed multiple projects during the diploma program</li>
                         </ul>
                     </div>
                 </div>
@@ -1613,30 +1670,26 @@
         </div>
     </section>
 
-    <!-- Projects Section -->
+    <!-- Projects Section - Updated with ALL projects from resume -->
     <section class="projects-section" id="projects">
         <div class="container">
             <div class="section-title">
                 <h2 data-text="Projects">Projects</h2>
             </div>
             <div class="section-subtitle">
-                A collection of innovative projects showcasing expertise in web development, machine learning, and software systems.
+                All projects completed as mentioned in my resume, showcasing diverse technical skills.
             </div>
             <div class="projects-container">
                 <!-- Project 1 -->
                 <div class="project-card">
                     <div class="project-header">
-                        <div class="project-title">Cloudburst Prediction System</div>
+                        <div class="project-title">Pet Registration System</div>
                     </div>
                     <div class="project-info">
-                        <p>A sophisticated machine learning system that predicts cloudburst occurrences using ensemble methods and weather data analysis with real-time monitoring capabilities.</p>
+                        <p>A web-based system for pet registration using HTML and CSS.</p>
                         <div class="project-tags">
-                            <span class="tag">Python</span>
-                            <span class="tag">Machine Learning</span>
-                            <span class="tag">TensorFlow</span>
-                            <span class="tag">Flask</span>
-                            <span class="tag">Bootstrap</span>
-                            <span class="tag">Data Analysis</span>
+                            <span class="tag">HTML</span>
+                            <span class="tag">CSS</span>
                         </div>
                     </div>
                 </div>
@@ -1644,17 +1697,16 @@
                 <!-- Project 2 -->
                 <div class="project-card">
                     <div class="project-header">
-                        <div class="project-title">CRUD E-Commerce Website</div>
+                        <div class="project-title">Hotel Management System</div>
                     </div>
                     <div class="project-info">
-                        <p>Full-featured e-commerce platform with user authentication, product management, shopping cart, payment integration, and admin dashboard.</p>
+                        <p>Comprehensive hotel management system with booking and billing features.</p>
                         <div class="project-tags">
-                            <span class="tag">Python</span>
-                            <span class="tag">MongoDB</span>
-                            <span class="tag">Flask</span>
-                            <span class="tag">HTML/CSS</span>
                             <span class="tag">JavaScript</span>
-                            <span class="tag">REST API</span>
+                            <span class="tag">PHP</span>
+                            <span class="tag">HTML</span>
+                            <span class="tag">CSS</span>
+                            <span class="tag">SQL</span>
                         </div>
                     </div>
                 </div>
@@ -1662,16 +1714,15 @@
                 <!-- Project 3 -->
                 <div class="project-card">
                     <div class="project-header">
-                        <div class="project-title">Blog Platform</div>
+                        <div class="project-title">Quiz System</div>
                     </div>
                     <div class="project-info">
-                        <p>A dynamic content management system for blogging with user roles, rich text editing, commenting system, and social sharing features.</p>
+                        <p>Interactive quiz platform for online examinations and assessments.</p>
                         <div class="project-tags">
-                            <span class="tag">Python</span>
-                            <span class="tag">MongoDB</span>
-                            <span class="tag">Flask</span>
-                            <span class="tag">Authentication</span>
-                            <span class="tag">WYSIWYG Editor</span>
+                            <span class="tag">PHP</span>
+                            <span class="tag">HTML</span>
+                            <span class="tag">CSS</span>
+                            <span class="tag">SQL</span>
                         </div>
                     </div>
                 </div>
@@ -1679,16 +1730,15 @@
                 <!-- Project 4 -->
                 <div class="project-card">
                     <div class="project-header">
-                        <div class="project-title">Hotel Management System</div>
+                        <div class="project-title">Parking Management System</div>
                     </div>
                     <div class="project-info">
-                        <p>Comprehensive hotel management software for room booking, billing, customer management, inventory, and reporting with multi-user support.</p>
+                        <p>System for managing parking slots, bookings, and payments.</p>
                         <div class="project-tags">
                             <span class="tag">PHP</span>
-                            <span class="tag">MySQL</span>
-                            <span class="tag">JavaScript</span>
-                            <span class="tag">Bootstrap</span>
-                            <span class="tag">jQuery</span>
+                            <span class="tag">HTML</span>
+                            <span class="tag">CSS</span>
+                            <span class="tag">SQL</span>
                         </div>
                     </div>
                 </div>
@@ -1699,13 +1749,12 @@
                         <div class="project-title">Restaurant Management System</div>
                     </div>
                     <div class="project-info">
-                        <p>End-to-end restaurant management solution with order tracking, menu management, billing, inventory control, and analytics dashboard.</p>
+                        <p>Complete solution for restaurant order management and billing.</p>
                         <div class="project-tags">
                             <span class="tag">PHP</span>
-                            <span class="tag">MySQL</span>
-                            <span class="tag">JavaScript</span>
-                            <span class="tag">AJAX</span>
-                            <span class="tag">Responsive Design</span>
+                            <span class="tag">HTML</span>
+                            <span class="tag">CSS</span>
+                            <span class="tag">SQL</span>
                         </div>
                     </div>
                 </div>
@@ -1713,16 +1762,15 @@
                 <!-- Project 6 -->
                 <div class="project-card">
                     <div class="project-header">
-                        <div class="project-title">Parking Management System</div>
+                        <div class="project-title">Tourism Management System</div>
                     </div>
                     <div class="project-info">
-                        <p>Smart parking management system with slot tracking, automated billing, vehicle registration, and real-time availability monitoring.</p>
+                        <p>Platform for managing tourism packages and bookings.</p>
                         <div class="project-tags">
                             <span class="tag">PHP</span>
-                            <span class="tag">MySQL</span>
-                            <span class="tag">HTML/CSS</span>
-                            <span class="tag">JavaScript</span>
-                            <span class="tag">QR Code</span>
+                            <span class="tag">HTML</span>
+                            <span class="tag">CSS</span>
+                            <span class="tag">SQL</span>
                         </div>
                     </div>
                 </div>
@@ -1730,16 +1778,15 @@
                 <!-- Project 7 -->
                 <div class="project-card">
                     <div class="project-header">
-                        <div class="project-title">Interactive Quiz System</div>
+                        <div class="project-title">Employee Task Management System</div>
                     </div>
                     <div class="project-info">
-                        <p>Online examination platform with multiple question types, automated scoring, timer, result analytics, and admin question bank management.</p>
+                        <p>System for assigning and tracking employee tasks and projects.</p>
                         <div class="project-tags">
                             <span class="tag">PHP</span>
-                            <span class="tag">MySQL</span>
-                            <span class="tag">JavaScript</span>
-                            <span class="tag">AJAX</span>
-                            <span class="tag">Timer Function</span>
+                            <span class="tag">HTML</span>
+                            <span class="tag">CSS</span>
+                            <span class="tag">SQL</span>
                         </div>
                     </div>
                 </div>
@@ -1747,16 +1794,101 @@
                 <!-- Project 8 -->
                 <div class="project-card">
                     <div class="project-header">
-                        <div class="project-title">Pet Registration System</div>
+                        <div class="project-title">GoodGrocery Online Store</div>
                     </div>
                     <div class="project-info">
-                        <p>Web-based pet registration and management system with owner details, vaccination records, pet profiles, and appointment scheduling.</p>
+                        <p>Simple grocery online store Android application.</p>
                         <div class="project-tags">
-                            <span class="tag">HTML5</span>
-                            <span class="tag">CSS3</span>
+                            <span class="tag">Java</span>
+                            <span class="tag">XML</span>
+                            <span class="tag">Android Studio</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 9 -->
+                <div class="project-card">
+                    <div class="project-header">
+                        <div class="project-title">Simple Tour Packages App</div>
+                    </div>
+                    <div class="project-info">
+                        <p>Android application for browsing and booking tour packages.</p>
+                        <div class="project-tags">
+                            <span class="tag">Java</span>
+                            <span class="tag">XML</span>
+                            <span class="tag">Android Studio</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 10 -->
+                <div class="project-card">
+                    <div class="project-header">
+                        <div class="project-title">CRUD E-Commerce Website</div>
+                    </div>
+                    <div class="project-info">
+                        <p>E-commerce website with CRUD operations using Python and MongoDB.</p>
+                        <div class="project-tags">
+                            <span class="tag">Python</span>
+                            <span class="tag">MongoDB</span>
+                            <span class="tag">HTML</span>
+                            <span class="tag">CSS</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 11 -->
+                <div class="project-card">
+                    <div class="project-header">
+                        <div class="project-title">Blog Platform</div>
+                    </div>
+                    <div class="project-info">
+                        <p>Blogging platform with content management features.</p>
+                        <div class="project-tags">
+                            <span class="tag">Python</span>
+                            <span class="tag">HTML</span>
+                            <span class="tag">CSS</span>
+                            <span class="tag">MongoDB</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 12 -->
+                <div class="project-card">
+                    <div class="project-header">
+                        <div class="project-title">Cloudburst Prediction System</div>
+                    </div>
+                    <div class="project-info">
+                        <p>Machine learning system for predicting cloudburst occurrences.</p>
+                        <div class="project-tags">
+                            <span class="tag">Python</span>
+                            <span class="tag">HTML</span>
+                            <span class="tag">CSS</span>
                             <span class="tag">JavaScript</span>
-                            <span class="tag">Form Validation</span>
-                            <span class="tag">Local Storage</span>
+                            <span class="tag">Bootstrap</span>
+                            <span class="tag">CSV</span>
+                            <span class="tag">ML Models</span>
+                            <span class="tag">Flask</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 13 -->
+                <div class="project-card">
+                    <div class="project-header">
+                        <div class="project-title">Disease Prediction System</div>
+                    </div>
+                    <div class="project-info">
+                        <p>Machine learning system for medical disease prediction.</p>
+                        <div class="project-tags">
+                            <span class="tag">Python</span>
+                            <span class="tag">HTML</span>
+                            <span class="tag">CSS</span>
+                            <span class="tag">JavaScript</span>
+                            <span class="tag">Bootstrap</span>
+                            <span class="tag">CSV</span>
+                            <span class="tag">ML Models</span>
+                            <span class="tag">Flask</span>
                         </div>
                     </div>
                 </div>
@@ -1764,63 +1896,67 @@
         </div>
     </section>
 
-<!-- Contact Section -->
-<section class="contact-section" id="contact">
-    <div class="container">
-        <div class="section-title">
-            <h2 data-text="Get In Touch">Get In Touch</h2>
-        </div>
-        <div class="section-subtitle">
-            Interested in collaborating or have an opportunity? Feel free to reach out—I'm always open to discussing new projects and ideas.
-        </div>
-        <div class="contact-container">
-            <div class="contact-info">
-                <div class="contact-item">
-                    <div class="contact-icon">
-                        <i class="fas fa-envelope"></i>
+    <!-- Contact Section - Enhanced with all contact info -->
+    <section class="contact-section" id="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2 data-text="Contact">Contact</h2>
+            </div>
+            <div class="section-subtitle">
+                Interested in collaborating or have an opportunity? Feel free to reach out using any of the contact methods below.
+            </div>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Phone</h3>
+                            <p>9512929918</p>
+                        </div>
                     </div>
-                    <div class="contact-details">
-                        <h3>Email</h3>
-                        <p>shlokkharva@gmail.com</p>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Email</h3>
+                            <p>shlokkharva@gmail.com</p>
+                        </div>
                     </div>
-                </div>
-                <div class="contact-item">
-                    <div class="contact-icon">
-                        <i class="fas fa-map-marker-alt"></i>
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/in/shlok-kharva17" target="_blank" title="LinkedIn" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="https://github.com/shlokkharva" target="_blank" title="GitHub" aria-label="GitHub">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="mailto:shlokkharva@gmail.com" title="Email" aria-label="Email">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                        <a href="https://www.instagram.com/shlok.py/?utm_source=qr&igsh=MTM5dm9wc3drMHhvcg%3D%3D#" target="_blank" title="Instagram" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://shlokkharva.github.io/shlokportfolio.github.io" target="_blank" title="Portfolio" aria-label="Portfolio">
+                            <i class="fas fa-globe"></i>
+                        </a>
                     </div>
-                    <div class="contact-details">
-                        <h3>Location</h3>
-                        <p>Vadodara, Gujarat 390001, India</p>
-                    </div>
-                </div>
-                <div class="social-links">
-                    <a href="https://www.linkedin.com/in/shlok-kharva17" target="_blank" title="LinkedIn" aria-label="LinkedIn">
-                        <i class="fab fa-linkedin-in"></i>
-                    </a>
-                    <a href="https://github.com/shlokkharva" target="_blank" title="GitHub" aria-label="GitHub">
-                        <i class="fab fa-github"></i>
-                    </a>
-                    <a href="mailto:shlokkharva@gmail.com" title="Email" aria-label="Email">
-                        <i class="fas fa-envelope"></i>
-                    </a>
-                    <a href="https://www.instagram.com/shlok.py/?utm_source=qr&igsh=MTM5dm9wc3drMHhvcg%3D%3D#" target="_blank" title="Instagram" aria-label="Instagram">
-                        <i class="fab fa-instagram"></i>
-                    </a>
                 </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
     <!-- Footer -->
     <footer>
         <div class="container">
             <div class="footer-content">
                 <h3>Shlok Kharva</h3>
-                <p>Computer Engineering Student • Full-Stack Developer • Machine Learning Enthusiast</p>
-                <p style="margin-top: 2rem;">Passionate about creating innovative solutions and continuously learning new technologies</p>
+                <p>Computer Engineering Student • Machine Learning Enthusiast • Software Developer</p>
+                <p style="margin-top: 2rem;">Third-year B.E. student with strong interest in machine learning and software development</p>
                 <div class="copyright">
                     <p>&copy; <span id="currentYear"></span> Shlok Kharva. All Rights Reserved.</p>
+                    <p style="margin-top: 1rem;">Phone: 9512929918 | Email: shlokkharva@gmail.com</p>
                 </div>
             </div>
         </div>
@@ -1879,22 +2015,28 @@
         const navLinks = document.getElementById('navLinks');
         const navItems = document.querySelectorAll('.nav-link');
         
-        menuToggle.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-            menuToggle.innerHTML = navLinks.classList.contains('active') 
-                ? '<i class="fas fa-times"></i>' 
-                : '<i class="fas fa-bars"></i>';
-            menuToggle.style.transform = navLinks.classList.contains('active') 
-                ? 'rotate(90deg)' 
-                : 'rotate(0)';
-        });
+        if (menuToggle) {
+            menuToggle.addEventListener('click', () => {
+                navLinks.classList.toggle('active');
+                menuToggle.innerHTML = navLinks.classList.contains('active') 
+                    ? '<i class="fas fa-times"></i>' 
+                    : '<i class="fas fa-bars"></i>';
+                menuToggle.style.transform = navLinks.classList.contains('active') 
+                    ? 'rotate(90deg)' 
+                    : 'rotate(0)';
+            });
+        }
         
         // Close menu when clicking on a link
         navItems.forEach(item => {
             item.addEventListener('click', () => {
-                navLinks.classList.remove('active');
-                menuToggle.innerHTML = '<i class="fas fa-bars"></i>';
-                menuToggle.style.transform = 'rotate(0)';
+                if (navLinks.classList.contains('active')) {
+                    navLinks.classList.remove('active');
+                    if (menuToggle) {
+                        menuToggle.innerHTML = '<i class="fas fa-bars"></i>';
+                        menuToggle.style.transform = 'rotate(0)';
+                    }
+                }
                 
                 // Update active class
                 navItems.forEach(nav => nav.classList.remove('active'));
@@ -1960,8 +2102,8 @@
         const typingText = document.getElementById('typing-text');
         const texts = [
             "Computer Engineering Student",
-            "Full-Stack Developer",
             "Machine Learning Enthusiast",
+            "Software Developer",
             "Problem Solver"
         ];
         let textIndex = 0;
@@ -2056,3 +2198,4 @@
         });
     </script>
 </body>
+</html>
