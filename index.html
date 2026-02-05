@@ -2259,7 +2259,7 @@
                     </div>
                 </div>
                 
-                <!-- Certification 4 -->
+                <!-- Certification 4 (HIDDEN - Will show when View More is clicked) -->
                 <div class="certification-card hidden-item">
                     <div class="certification-provider">
                         <div class="certification-provider-icon">
@@ -2587,10 +2587,10 @@
                             });
                         }, 50);
                     } else {
-                        // Hide all except first 7 projects
+                        // Hide all except first 6 projects (showing 6 initially)
                         const allProjects = document.querySelectorAll('#projects .project-card');
                         allProjects.forEach((project, index) => {
-                            if (index >= 7) {
+                            if (index >= 6) {
                                 project.classList.add('hidden-item');
                                 project.style.display = 'none';
                             }
@@ -2606,16 +2606,26 @@
                 viewMoreProjectsBtn.style.display = 'none';
             }
             
-            // Certifications View More
+            // Certifications View More - Show only first 3, hide the rest
             const viewMoreCertificationsBtn = document.getElementById('viewMoreCertifications');
-            const hiddenCertifications = document.querySelectorAll('#certifications .hidden-item');
+            const allCertifications = document.querySelectorAll('#certifications .certification-card');
             let certificationsExpanded = false;
             
-            if (viewMoreCertificationsBtn && hiddenCertifications.length > 0) {
+            // Initially hide all certifications except first 3
+            if (allCertifications.length > 3) {
+                allCertifications.forEach((cert, index) => {
+                    if (index >= 3) {
+                        cert.classList.add('hidden-item');
+                        cert.style.display = 'none';
+                    }
+                });
+            }
+            
+            if (viewMoreCertificationsBtn && allCertifications.length > 3) {
                 viewMoreCertificationsBtn.addEventListener('click', function() {
                     if (!certificationsExpanded) {
-                        // Show all hidden certifications
-                        hiddenCertifications.forEach(cert => {
+                        // Show all certifications
+                        allCertifications.forEach(cert => {
                             cert.classList.remove('hidden-item');
                             cert.style.display = 'block';
                         });
@@ -2624,15 +2634,16 @@
                         
                         // Trigger animations for newly shown items
                         setTimeout(() => {
-                            hiddenCertifications.forEach(cert => {
-                                cert.style.animation = 'fadeInUp 0.6s ease forwards';
+                            allCertifications.forEach((cert, index) => {
+                                if (index >= 3) {
+                                    cert.style.animation = 'fadeInUp 0.6s ease forwards';
+                                }
                             });
                         }, 50);
                     } else {
-                        // Hide all except first 4 certifications
-                        const allCertifications = document.querySelectorAll('#certifications .certification-card');
+                        // Hide all except first 3 certifications
                         allCertifications.forEach((cert, index) => {
-                            if (index >= 4) {
+                            if (index >= 3) {
                                 cert.classList.add('hidden-item');
                                 cert.style.display = 'none';
                             }
@@ -2644,7 +2655,7 @@
                     // Smooth scroll to button
                     viewMoreCertificationsBtn.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
                 });
-            } else if (viewMoreCertificationsBtn && hiddenCertifications.length === 0) {
+            } else if (viewMoreCertificationsBtn && allCertifications.length <= 3) {
                 viewMoreCertificationsBtn.style.display = 'none';
             }
         }
@@ -2879,5 +2890,3 @@
     </script>
 </body>
 </html>
-
-
