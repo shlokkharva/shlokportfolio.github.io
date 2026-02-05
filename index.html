@@ -257,6 +257,81 @@
             box-shadow: 0 15px 40px rgba(59, 130, 246, 0.4);
         }
         
+        /* NEW: View More Button Styling */
+        .view-more-btn {
+            display: block;
+            margin: 4rem auto 0;
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(139, 92, 246, 0.1) 100%);
+            color: var(--primary-light);
+            border: 2px solid rgba(59, 130, 246, 0.3);
+            padding: 1.2rem 3rem;
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.4s;
+            backdrop-filter: blur(10px);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .view-more-btn:hover {
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.2) 0%, rgba(139, 92, 246, 0.2) 100%);
+            border-color: rgba(59, 130, 246, 0.5);
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(59, 130, 246, 0.15);
+        }
+        
+        .view-more-btn i {
+            margin-left: 0.5rem;
+            transition: transform 0.3s;
+        }
+        
+        .view-more-btn:hover i {
+            transform: translateY(3px);
+        }
+        
+        /* NEW: Hidden Items for View More Functionality */
+        .hidden-item {
+            display: none;
+            animation: fadeInUp 0.6s ease forwards;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* NEW: Hackathon Role Badges */
+        .role-badge {
+            display: inline-block;
+            padding: 0.4rem 1rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-left: 0.8rem;
+            position: relative;
+            top: -2px;
+        }
+        
+        .role-leader {
+            background-color: rgba(239, 68, 68, 0.15);
+            color: #ef4444;
+            border: 1px solid rgba(239, 68, 68, 0.3);
+        }
+        
+        .role-member {
+            background-color: rgba(34, 197, 94, 0.15);
+            color: #22c55e;
+            border: 1px solid rgba(34, 197, 94, 0.3);
+        }
+        
         /* Enhanced Section Titles */
         .section-title h2 {
             font-size: 3rem;
@@ -295,6 +370,242 @@
             margin-left: 2px;
             animation: blink 1s infinite;
             vertical-align: middle;
+        }
+        
+        /* NEW: Certifications Section */
+        .certifications-section {
+            background-color: var(--darker);
+            padding: 7rem 0;
+        }
+        
+        .certifications-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .certification-card {
+            background-color: rgba(30, 41, 59, 0.6);
+            border-radius: 16px;
+            padding: 2rem;
+            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            display: flex;
+            flex-direction: column;
+            backdrop-filter: blur(10px);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .certification-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 6px;
+            height: 100%;
+            background: var(--gradient-1);
+            transform: scaleY(0);
+            transform-origin: top;
+            transition: transform 0.5s;
+        }
+        
+        .certification-card:hover::before {
+            transform: scaleY(1);
+        }
+        
+        .certification-card:hover {
+            transform: translateY(-8px);
+            background-color: rgba(30, 41, 59, 0.8);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+        
+        .certification-provider {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.2rem;
+        }
+        
+        .certification-provider-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 12px;
+            background: var(--gradient-1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: white;
+            box-shadow: 0 8px 20px rgba(59, 130, 246, 0.3);
+        }
+        
+        .certification-provider-text h4 {
+            color: var(--light);
+            font-size: 1.1rem;
+            margin-bottom: 0.3rem;
+        }
+        
+        .certification-provider-text p {
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+        
+        .certification-title {
+            color: var(--light);
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            line-height: 1.4;
+        }
+        
+        .certification-description {
+            color: var(--gray);
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+        
+        .certification-date {
+            color: var(--primary-light);
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-top: auto;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        /* NEW: Hackathons Section */
+        .hackathons-section {
+            background-color: var(--secondary);
+            clip-path: polygon(0 5%, 100% 0, 100% 95%, 0 100%);
+            padding: 7rem 0;
+        }
+        
+        .hackathons-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 2.5rem;
+            margin-top: 3rem;
+        }
+        
+        .hackathon-card {
+            background-color: rgba(30, 41, 59, 0.6);
+            border-radius: 20px;
+            padding: 2.5rem;
+            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            position: relative;
+            overflow: hidden;
+            backdrop-filter: blur(10px);
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .hackathon-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, #8b5cf6, #3b82f6, #10b981);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.5s;
+        }
+        
+        .hackathon-card:hover::before {
+            transform: scaleX(1);
+        }
+        
+        .hackathon-card:hover {
+            transform: translateY(-10px);
+            background-color: rgba(30, 41, 59, 0.8);
+            box-shadow: 0 25px 50px rgba(59, 130, 246, 0.2);
+        }
+        
+        .hackathon-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        
+        .hackathon-title {
+            font-size: 1.5rem;
+            color: var(--light);
+            line-height: 1.3;
+            font-weight: 600;
+            flex: 1;
+        }
+        
+        .hackathon-year {
+            background: var(--gradient-1);
+            color: white;
+            padding: 0.5rem 1.2rem;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            white-space: nowrap;
+        }
+        
+        .hackathon-organizer {
+            color: var(--primary-light);
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+        
+        .hackathon-organizer i {
+            font-size: 1rem;
+        }
+        
+        .hackathon-role {
+            margin-bottom: 1.5rem;
+        }
+        
+        .hackathon-project {
+            color: var(--gray-light);
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+            font-size: 1.05rem;
+        }
+        
+        .hackathon-project strong {
+            color: var(--light);
+        }
+        
+        .hackathon-contribution {
+            color: var(--gray);
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-top: auto;
+        }
+        
+        .hackathon-contribution ul {
+            list-style-type: none;
+            margin-top: 0.8rem;
+        }
+        
+        .hackathon-contribution li {
+            margin-bottom: 0.8rem;
+            position: relative;
+            padding-left: 1.8rem;
+        }
+        
+        .hackathon-contribution li::before {
+            content: '▸';
+            color: var(--primary);
+            position: absolute;
+            left: 0;
+            font-weight: bold;
         }
         
         /* ENHANCED HORIZONTAL CONTACT SECTION */
@@ -436,6 +747,11 @@
             .projects-container {
                 grid-template-columns: repeat(2, 1fr);
             }
+            
+            .certifications-container,
+            .hackathons-container {
+                grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            }
         }
         
         @media (max-width: 992px) {
@@ -446,6 +762,11 @@
             
             .contact-item {
                 min-height: 200px;
+            }
+            
+            .certifications-container,
+            .hackathons-container {
+                grid-template-columns: 1fr;
             }
         }
         
@@ -471,6 +792,15 @@
             .contact-item {
                 padding: 2rem 1.5rem;
                 min-height: 180px;
+            }
+            
+            .hackathon-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .hackathon-year {
+                align-self: flex-start;
             }
         }
         
@@ -1169,7 +1499,9 @@
             .project-card:hover,
             .btn:hover,
             .social-links a:hover,
-            .contact-item:hover {
+            .contact-item:hover,
+            .certification-card:hover,
+            .hackathon-card:hover {
                 transform: none;
             }
             
@@ -1319,7 +1651,7 @@
                 font-size: 1.8rem;
             }
             
-            .skill-card, .experience-card, .education-card {
+            .skill-card, .experience-card, .education-card, .hackathon-card {
                 padding: 2.5rem 1.8rem;
             }
             
@@ -1328,7 +1660,7 @@
                 font-size: 1rem;
             }
             
-            .hero, .skills-section, .experience-section, .projects-section, .contact-section {
+            .hero, .skills-section, .experience-section, .projects-section, .contact-section, .certifications-section, .hackathons-section {
                 clip-path: polygon(0 0, 100% 0, 100% 98%, 0 100%);
             }
         }
@@ -1356,6 +1688,8 @@
                     <li><a href="#experience" class="nav-link"><i class="fas fa-briefcase"></i>Experience</a></li>
                     <li><a href="#education" class="nav-link"><i class="fas fa-graduation-cap"></i>Education</a></li>
                     <li><a href="#projects" class="nav-link"><i class="fas fa-project-diagram"></i>Projects</a></li>
+                    <li><a href="#hackathons" class="nav-link"><i class="fas fa-trophy"></i>Hackathons</a></li>
+                    <li><a href="#certifications" class="nav-link"><i class="fas fa-certificate"></i>Certifications</a></li>
                     <li><a href="#contact" class="nav-link"><i class="fas fa-envelope"></i>Contact</a></li>
                 </ul>
             </nav>
@@ -1415,7 +1749,7 @@
                     <div class="stat-text">Internships</div>
                 </div>
                 <div class="stat-item">
-                    <div class="stat-number">12+</div>
+                    <div class="stat-number">13</div>
                     <div class="stat-text">Projects</div>
                 </div>
                 <div class="stat-item">
@@ -1423,7 +1757,7 @@
                     <div class="stat-text">Hackathons</div>
                 </div>
                 <div class="stat-item">
-                    <div class="stat-number">12+</div>
+                    <div class="stat-number">12</div>
                     <div class="stat-text">Certifications</div>
                 </div>
             </div>
@@ -1675,8 +2009,8 @@
                     </div>
                 </div>
                 
-                <!-- Project 8 -->
-                <div class="project-card">
+                <!-- Project 8 (HIDDEN) -->
+                <div class="project-card hidden-item">
                     <div class="project-header">
                         <div class="project-title">GoodGrocery Online Store</div>
                     </div>
@@ -1689,8 +2023,8 @@
                     </div>
                 </div>
                 
-                <!-- Project 9 -->
-                <div class="project-card">
+                <!-- Project 9 (HIDDEN) -->
+                <div class="project-card hidden-item">
                     <div class="project-header">
                         <div class="project-title">Simple Tour Packages App</div>
                     </div>
@@ -1703,8 +2037,8 @@
                     </div>
                 </div>
                 
-                <!-- Project 10 -->
-                <div class="project-card">
+                <!-- Project 10 (HIDDEN) -->
+                <div class="project-card hidden-item">
                     <div class="project-header">
                         <div class="project-title">CRUD E-Commerce Website</div>
                     </div>
@@ -1717,8 +2051,8 @@
                     </div>
                 </div>
                 
-                <!-- Project 11 -->
-                <div class="project-card">
+                <!-- Project 11 (HIDDEN) -->
+                <div class="project-card hidden-item">
                     <div class="project-header">
                         <div class="project-title">Blog Platform</div>
                     </div>
@@ -1731,8 +2065,8 @@
                     </div>
                 </div>
                 
-                <!-- Project 12 -->
-                <div class="project-card">
+                <!-- Project 12 (HIDDEN) -->
+                <div class="project-card hidden-item">
                     <div class="project-header">
                         <div class="project-title">Cloudburst Prediction System</div>
                     </div>
@@ -1746,8 +2080,8 @@
                     </div>
                 </div>
                 
-                <!-- Project 13 -->
-                <div class="project-card">
+                <!-- Project 13 (HIDDEN) -->
+                <div class="project-card hidden-item">
                     <div class="project-header">
                         <div class="project-title">Disease Prediction System</div>
                     </div>
@@ -1761,6 +2095,335 @@
                     </div>
                 </div>
             </div>
+            <button class="view-more-btn" id="viewMoreProjects">
+                View More Projects <i class="fas fa-chevron-down"></i>
+            </button>
+        </div>
+    </section>
+
+    <!-- NEW: Hackathons Section -->
+    <section class="hackathons-section" id="hackathons">
+        <div class="container">
+            <div class="section-title">
+                <h2 data-text="Hackathons">Hackathons</h2>
+            </div>
+            <div class="section-subtitle">
+                Participated in multiple hackathons showcasing leadership, teamwork, and problem-solving skills.
+            </div>
+            <div class="hackathons-container">
+                <!-- Hackathon 1 -->
+                <div class="hackathon-card">
+                    <div class="hackathon-header">
+                        <div class="hackathon-title">
+                            GDG Hackathon 2026
+                            <span class="role-badge role-leader">Team Leader</span>
+                        </div>
+                        <div class="hackathon-year">2026</div>
+                    </div>
+                    <div class="hackathon-organizer">
+                        <i class="fas fa-map-marker-alt"></i> Google Development Group, SVIT
+                    </div>
+                    <div class="hackathon-project">
+                        <strong>Project:</strong> Medical Disease Prediction System using Flask
+                    </div>
+                    <div class="hackathon-contribution">
+                        <strong>My Role:</strong> Team Leader & Fullstack Developer
+                        <ul>
+                            <li>Led a team to build a medical disease prediction system</li>
+                            <li>Contributed as a fullstack developer using Flask framework</li>
+                            <li>Implemented machine learning models for disease prediction</li>
+                            <li>Designed and developed both frontend and backend components</li>
+                            <li>Coordinated team tasks and ensured project completion</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Hackathon 2 -->
+                <div class="hackathon-card">
+                    <div class="hackathon-header">
+                        <div class="hackathon-title">
+                            Meccia Hacks 2024
+                            <span class="role-badge role-leader">Team Leader</span>
+                        </div>
+                        <div class="hackathon-year">2024</div>
+                    </div>
+                    <div class="hackathon-organizer">
+                        <i class="fas fa-map-marker-alt"></i> SVIT Campus
+                    </div>
+                    <div class="hackathon-project">
+                        <strong>Project:</strong> CloudBurst Prediction System
+                    </div>
+                    <div class="hackathon-contribution">
+                        <strong>My Role:</strong> Team Leader & Fullstack Developer
+                        <ul>
+                            <li>Led a team to develop a cloudburst prediction system</li>
+                            <li>Served as a fullstack developer for the project</li>
+                            <li>Implemented machine learning models for weather prediction</li>
+                            <li>Built both frontend interface and backend logic</li>
+                            <li>Managed team collaboration and project timeline</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Hackathon 3 -->
+                <div class="hackathon-card">
+                    <div class="hackathon-header">
+                        <div class="hackathon-title">
+                            Tinkerthon 3.0 2025
+                            <span class="role-badge role-member">Team Member</span>
+                        </div>
+                        <div class="hackathon-year">2025</div>
+                    </div>
+                    <div class="hackathon-organizer">
+                        <i class="fas fa-map-marker-alt"></i> Navrachana University
+                    </div>
+                    <div class="hackathon-project">
+                        <strong>Project:</strong> Local Canteen Management System for employees
+                    </div>
+                    <div class="hackathon-contribution">
+                        <strong>My Role:</strong> Team Member & Frontend Developer
+                        <ul>
+                            <li>Contributed as a frontend developer in a team project</li>
+                            <li>Developed user interfaces for the canteen management system</li>
+                            <li>Collaborated with backend developers for API integration</li>
+                            <li>Implemented responsive design for different devices</li>
+                            <li>Participated in team meetings and code reviews</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NEW: Certifications Section -->
+    <section class="certifications-section" id="certifications">
+        <div class="container">
+            <div class="section-title">
+                <h2 data-text="Certifications">Certifications</h2>
+            </div>
+            <div class="section-subtitle">
+                Professional certifications and courses completed to enhance technical and soft skills.
+            </div>
+            <div class="certifications-container">
+                <!-- Certification 1 -->
+                <div class="certification-card">
+                    <div class="certification-provider">
+                        <div class="certification-provider-icon">
+                            <i class="fab fa-google"></i>
+                        </div>
+                        <div class="certification-provider-text">
+                            <h4>Google</h4>
+                            <p>Hack2skill</p>
+                        </div>
+                    </div>
+                    <h3 class="certification-title">Real-life Problem Statement Project</h3>
+                    <p class="certification-description">Worked on real-life problem statements and developed solutions using cutting-edge technologies.</p>
+                    <div class="certification-date">
+                        <i class="far fa-calendar"></i> 2024
+                    </div>
+                </div>
+                
+                <!-- Certification 2 -->
+                <div class="certification-card">
+                    <div class="certification-provider">
+                        <div class="certification-provider-icon">
+                            <i class="fas fa-robot"></i>
+                        </div>
+                        <div class="certification-provider-text">
+                            <h4>Be10X</h4>
+                            <p>Workshop</p>
+                        </div>
+                    </div>
+                    <h3 class="certification-title">AI Tools Workshop</h3>
+                    <p class="certification-description">Learned to work with AI tools like ChatGPT, GenAI, and other cutting-edge artificial intelligence technologies.</p>
+                    <div class="certification-date">
+                        <i class="far fa-calendar"></i> 2026
+                    </div>
+                </div>
+                
+                <!-- Certification 3 -->
+                <div class="certification-card">
+                    <div class="certification-provider">
+                        <div class="certification-provider-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <div class="certification-provider-text">
+                            <h4>SAP/Coursera</h4>
+                            <p>Professional Certificate</p>
+                        </div>
+                    </div>
+                    <h3 class="certification-title">Implementing an SAP Solution</h3>
+                    <p class="certification-description">Comprehensive training on implementing SAP solutions in enterprise environments.</p>
+                    <div class="certification-date">
+                        <i class="far fa-calendar"></i> 2024
+                    </div>
+                </div>
+                
+                <!-- Certification 4 -->
+                <div class="certification-card">
+                    <div class="certification-provider">
+                        <div class="certification-provider-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <div class="certification-provider-text">
+                            <h4>SAP/Coursera</h4>
+                            <p>Professional Certificate</p>
+                        </div>
+                    </div>
+                    <h3 class="certification-title">SAP Customer Engagement and Discovery</h3>
+                    <p class="certification-description">Mastering customer engagement strategies and discovery processes in SAP environments.</p>
+                    <div class="certification-date">
+                        <i class="far fa-calendar"></i> 2024
+                    </div>
+                </div>
+                
+                <!-- Certification 5 (HIDDEN) -->
+                <div class="certification-card hidden-item">
+                    <div class="certification-provider">
+                        <div class="certification-provider-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <div class="certification-provider-text">
+                            <h4>SAP/Coursera</h4>
+                            <p>Professional Certificate</p>
+                        </div>
+                    </div>
+                    <h3 class="certification-title">Becoming an SAP Professional</h3>
+                    <p class="certification-description">Pathway to becoming a certified SAP professional with industry-recognized credentials.</p>
+                    <div class="certification-date">
+                        <i class="far fa-calendar"></i> 2024
+                    </div>
+                </div>
+                
+                <!-- Certification 6 (HIDDEN) -->
+                <div class="certification-card hidden-item">
+                    <div class="certification-provider">
+                        <div class="certification-provider-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <div class="certification-provider-text">
+                            <h4>SAP/Coursera</h4>
+                            <p>Professional Certificate</p>
+                        </div>
+                    </div>
+                    <h3 class="certification-title">Designing an SAP Solution</h3>
+                    <p class="certification-description">Learn to design comprehensive SAP solutions tailored to business requirements.</p>
+                    <div class="certification-date">
+                        <i class="far fa-calendar"></i> 2024
+                    </div>
+                </div>
+                
+                <!-- Certification 7 (HIDDEN) -->
+                <div class="certification-card hidden-item">
+                    <div class="certification-provider">
+                        <div class="certification-provider-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <div class="certification-provider-text">
+                            <h4>SAP/Coursera</h4>
+                            <p>Professional Certificate</p>
+                        </div>
+                    </div>
+                    <h3 class="certification-title">Understanding the Enterprise Systems Environment</h3>
+                    <p class="certification-description">Comprehensive understanding of enterprise systems and their integration.</p>
+                    <div class="certification-date">
+                        <i class="far fa-calendar"></i> 2024
+                    </div>
+                </div>
+                
+                <!-- Certification 8 (HIDDEN) -->
+                <div class="certification-card hidden-item">
+                    <div class="certification-provider">
+                        <div class="certification-provider-icon">
+                            <i class="fab fa-ibm"></i>
+                        </div>
+                        <div class="certification-provider-text">
+                            <h4>IBM/Coursera</h4>
+                            <p>Professional Certificate</p>
+                        </div>
+                    </div>
+                    <h3 class="certification-title">Introduction to Agile Development and Scrum</h3>
+                    <p class="certification-description">Fundamentals of Agile methodologies and Scrum framework for software development.</p>
+                    <div class="certification-date">
+                        <i class="far fa-calendar"></i> 2024
+                    </div>
+                </div>
+                
+                <!-- Certification 9 (HIDDEN) -->
+                <div class="certification-card hidden-item">
+                    <div class="certification-provider">
+                        <div class="certification-provider-icon">
+                            <i class="fab fa-microsoft"></i>
+                        </div>
+                        <div class="certification-provider-text">
+                            <h4>Microsoft/Coursera</h4>
+                            <p>Professional Certificate</p>
+                        </div>
+                    </div>
+                    <h3 class="certification-title">Introduction to Generative AI</h3>
+                    <p class="certification-description">Comprehensive introduction to Generative AI technologies and applications.</p>
+                    <div class="certification-date">
+                        <i class="far fa-calendar"></i> 2024
+                    </div>
+                </div>
+                
+                <!-- Certification 10 (HIDDEN) -->
+                <div class="certification-card hidden-item">
+                    <div class="certification-provider">
+                        <div class="certification-provider-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <div class="certification-provider-text">
+                            <h4>SAP/Coursera</h4>
+                            <p>Professional Certificate</p>
+                        </div>
+                    </div>
+                    <h3 class="certification-title">SAP Technology Consultant</h3>
+                    <p class="certification-description">Professional certification for SAP technology consulting and implementation.</p>
+                    <div class="certification-date">
+                        <i class="far fa-calendar"></i> 2024
+                    </div>
+                </div>
+                
+                <!-- Certification 11 (HIDDEN) -->
+                <div class="certification-card hidden-item">
+                    <div class="certification-provider">
+                        <div class="certification-provider-icon">
+                            <i class="fab fa-ibm"></i>
+                        </div>
+                        <div class="certification-provider-text">
+                            <h4>IBM Skills Build</h4>
+                            <p>Professional Certificate</p>
+                        </div>
+                    </div>
+                    <h3 class="certification-title">Critical Soft Skills for Project Managers</h3>
+                    <p class="certification-description">Essential soft skills training for effective project management and team leadership.</p>
+                    <div class="certification-date">
+                        <i class="far fa-calendar"></i> 2024
+                    </div>
+                </div>
+                
+                <!-- Certification 12 (HIDDEN) -->
+                <div class="certification-card hidden-item">
+                    <div class="certification-provider">
+                        <div class="certification-provider-icon">
+                            <i class="fas fa-business-time"></i>
+                        </div>
+                        <div class="certification-provider-text">
+                            <h4>EMPI Business School</h4>
+                            <p>Professional Certificate</p>
+                        </div>
+                    </div>
+                    <h3 class="certification-title">Fundamental Knowledge of E-Commerce</h3>
+                    <p class="certification-description">Comprehensive understanding of e-commerce fundamentals and business models.</p>
+                    <div class="certification-date">
+                        <i class="far fa-calendar"></i> 2024
+                    </div>
+                </div>
+            </div>
+            <button class="view-more-btn" id="viewMoreCertifications">
+                View More Certifications <i class="fas fa-chevron-down"></i>
+            </button>
         </div>
     </section>
 
@@ -1894,7 +2557,97 @@
             
             // Initialize animations
             initAnimations();
+            
+            // Initialize View More buttons
+            initViewMoreButtons();
         });
+
+        // View More functionality
+        function initViewMoreButtons() {
+            // Projects View More
+            const viewMoreProjectsBtn = document.getElementById('viewMoreProjects');
+            const hiddenProjects = document.querySelectorAll('#projects .hidden-item');
+            let projectsExpanded = false;
+            
+            if (viewMoreProjectsBtn && hiddenProjects.length > 0) {
+                viewMoreProjectsBtn.addEventListener('click', function() {
+                    if (!projectsExpanded) {
+                        // Show all hidden projects
+                        hiddenProjects.forEach(project => {
+                            project.classList.remove('hidden-item');
+                            project.style.display = 'block';
+                        });
+                        viewMoreProjectsBtn.innerHTML = 'View Less <i class="fas fa-chevron-up"></i>';
+                        projectsExpanded = true;
+                        
+                        // Trigger animations for newly shown items
+                        setTimeout(() => {
+                            hiddenProjects.forEach(project => {
+                                project.style.animation = 'fadeInUp 0.6s ease forwards';
+                            });
+                        }, 50);
+                    } else {
+                        // Hide all except first 7 projects
+                        const allProjects = document.querySelectorAll('#projects .project-card');
+                        allProjects.forEach((project, index) => {
+                            if (index >= 7) {
+                                project.classList.add('hidden-item');
+                                project.style.display = 'none';
+                            }
+                        });
+                        viewMoreProjectsBtn.innerHTML = 'View More Projects <i class="fas fa-chevron-down"></i>';
+                        projectsExpanded = false;
+                    }
+                    
+                    // Smooth scroll to button
+                    viewMoreProjectsBtn.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                });
+            } else if (viewMoreProjectsBtn && hiddenProjects.length === 0) {
+                viewMoreProjectsBtn.style.display = 'none';
+            }
+            
+            // Certifications View More
+            const viewMoreCertificationsBtn = document.getElementById('viewMoreCertifications');
+            const hiddenCertifications = document.querySelectorAll('#certifications .hidden-item');
+            let certificationsExpanded = false;
+            
+            if (viewMoreCertificationsBtn && hiddenCertifications.length > 0) {
+                viewMoreCertificationsBtn.addEventListener('click', function() {
+                    if (!certificationsExpanded) {
+                        // Show all hidden certifications
+                        hiddenCertifications.forEach(cert => {
+                            cert.classList.remove('hidden-item');
+                            cert.style.display = 'block';
+                        });
+                        viewMoreCertificationsBtn.innerHTML = 'View Less <i class="fas fa-chevron-up"></i>';
+                        certificationsExpanded = true;
+                        
+                        // Trigger animations for newly shown items
+                        setTimeout(() => {
+                            hiddenCertifications.forEach(cert => {
+                                cert.style.animation = 'fadeInUp 0.6s ease forwards';
+                            });
+                        }, 50);
+                    } else {
+                        // Hide all except first 4 certifications
+                        const allCertifications = document.querySelectorAll('#certifications .certification-card');
+                        allCertifications.forEach((cert, index) => {
+                            if (index >= 4) {
+                                cert.classList.add('hidden-item');
+                                cert.style.display = 'none';
+                            }
+                        });
+                        viewMoreCertificationsBtn.innerHTML = 'View More Certifications <i class="fas fa-chevron-down"></i>';
+                        certificationsExpanded = false;
+                    }
+                    
+                    // Smooth scroll to button
+                    viewMoreCertificationsBtn.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                });
+            } else if (viewMoreCertificationsBtn && hiddenCertifications.length === 0) {
+                viewMoreCertificationsBtn.style.display = 'none';
+            }
+        }
 
         // Mobile menu toggle
         const menuToggle = document.getElementById('menuToggle');
@@ -2031,7 +2784,7 @@
         
         // Animation on scroll
         function initAnimations() {
-            const animatedElements = document.querySelectorAll('.skill-card, .experience-card, .education-card, .project-card, .stat-item, .contact-item');
+            const animatedElements = document.querySelectorAll('.skill-card, .experience-card, .education-card, .project-card:not(.hidden-item), .stat-item, .contact-item, .certification-card:not(.hidden-item), .hackathon-card');
             
             animatedElements.forEach(el => {
                 el.style.opacity = '0';
@@ -2040,7 +2793,7 @@
         }
         
         function triggerAnimations() {
-            const animatedElements = document.querySelectorAll('.skill-card, .experience-card, .education-card, .project-card, .stat-item, .contact-item');
+            const animatedElements = document.querySelectorAll('.skill-card, .experience-card, .education-card, .project-card:not(.hidden-item), .stat-item, .contact-item, .certification-card:not(.hidden-item), .hackathon-card');
             
             animatedElements.forEach(el => {
                 const rect = el.getBoundingClientRect();
@@ -2123,28 +2876,6 @@
                 });
             });
         }
-        
-        // Add click to copy phone number
-        const phoneElement = document.querySelector('.contact-details p:first-child');
-        if (phoneElement && phoneElement.textContent.match(/\d{10}/)) {
-            phoneElement.style.cursor = 'pointer';
-            phoneElement.addEventListener('click', function() {
-                const phone = this.textContent.trim();
-                navigator.clipboard.writeText(phone).then(() => {
-                    const originalText = this.textContent;
-                    this.textContent = 'Copied!';
-                    this.style.color = 'var(--success)';
-                    
-                    setTimeout(() => {
-                        this.textContent = originalText;
-                        this.style.color = '';
-                    }, 2000);
-                });
-            });
-        }
     </script>
 </body>
 </html>
-
-
-
