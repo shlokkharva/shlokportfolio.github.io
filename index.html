@@ -297,29 +297,117 @@
             vertical-align: middle;
         }
         
-        /* Enhanced Social Links */
+        /* ENHANCED HORIZONTAL CONTACT SECTION */
+        .contact-section {
+            background-color: var(--darker);
+            clip-path: polygon(0 5%, 100% 0, 100% 100%, 0 100%);
+            padding: 7rem 0;
+        }
+        
+        .contact-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 3rem;
+        }
+        
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2.5rem;
+            width: 100%;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .contact-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding: 2.5rem 2rem;
+            background: linear-gradient(135deg, rgba(30, 41, 59, 0.7) 0%, rgba(30, 41, 59, 0.4) 100%);
+            border-radius: 20px;
+            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            min-height: 220px;
+            justify-content: center;
+        }
+        
+        .contact-item:hover {
+            transform: translateY(-10px);
+            background: linear-gradient(135deg, rgba(30, 41, 59, 0.9) 0%, rgba(30, 41, 59, 0.6) 100%);
+            box-shadow: 0 20px 40px rgba(59, 130, 246, 0.2);
+        }
+        
+        .contact-icon {
+            width: 70px;
+            height: 70px;
+            background: var(--gradient-1);
+            color: white;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 10px 25px rgba(59, 130, 246, 0.3);
+            transition: transform 0.4s;
+        }
+        
+        .contact-item:hover .contact-icon {
+            transform: rotate(10deg) scale(1.1);
+        }
+        
+        .contact-details h3 {
+            color: var(--light);
+            margin-bottom: 0.8rem;
+            font-size: 1.4rem;
+        }
+        
+        .contact-details p {
+            color: var(--gray);
+            font-size: 1.1rem;
+            line-height: 1.6;
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+        
+        .contact-details p:hover {
+            color: var(--primary-light);
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-top: 3rem;
+            flex-wrap: wrap;
+        }
+        
         .social-links a {
             display: flex;
             align-items: center;
             justify-content: center;
-            width: 60px;
-            height: 60px;
+            width: 55px;
+            height: 55px;
             background-color: rgba(30, 41, 59, 0.6);
             color: var(--gray-light);
-            border-radius: 16px;
+            border-radius: 14px;
             text-decoration: none;
-            font-size: 1.5rem;
+            font-size: 1.4rem;
             transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
             border: 1px solid rgba(255, 255, 255, 0.05);
             position: relative;
             overflow: hidden;
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
         }
         
         .social-links a:hover {
             color: white;
             transform: translateY(-8px);
-            box-shadow: 0 15px 35px rgba(59, 130, 246, 0.25);
+            box-shadow: 0 15px 30px rgba(59, 130, 246, 0.25);
             background-color: rgba(30, 41, 59, 0.9);
         }
         
@@ -343,28 +431,21 @@
             box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
         }
         
-        /* Enhanced Contact Items */
-        .contact-item {
-            display: flex;
-            align-items: center;
-            margin-bottom: 2.5rem;
-            transition: transform 0.4s;
-            padding: 1.8rem;
-            border-radius: 18px;
-            background-color: rgba(30, 41, 59, 0.4);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-        }
-        
-        .contact-item:hover {
-            transform: translateX(10px);
-            background-color: rgba(30, 41, 59, 0.7);
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
-        }
-        
         /* Enhanced Responsive Design */
         @media (max-width: 1200px) {
             .projects-container {
                 grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (max-width: 992px) {
+            .contact-grid {
+                grid-template-columns: 1fr;
+                max-width: 600px;
+            }
+            
+            .contact-item {
+                min-height: 200px;
             }
         }
         
@@ -380,6 +461,16 @@
             
             .section-title h2 {
                 font-size: 2.3rem;
+            }
+            
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+            
+            .contact-item {
+                padding: 2rem 1.5rem;
+                min-height: 180px;
             }
         }
         
@@ -1023,56 +1114,6 @@
             clip-path: polygon(0 5%, 100% 0, 100% 95%, 0 100%);
         }
         
-        /* Contact Section */
-        .contact-section {
-            background-color: var(--darker);
-            clip-path: polygon(0 5%, 100% 0, 100% 100%, 0 100%);
-        }
-        
-        .contact-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 4rem;
-            align-items: flex-start;
-        }
-        
-        .contact-info {
-            flex: 1;
-            min-width: 350px;
-        }
-        
-        .contact-icon {
-            width: 70px;
-            height: 70px;
-            background: var(--gradient-1);
-            color: white;
-            border-radius: 16px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.8rem;
-            margin-right: 1.8rem;
-            flex-shrink: 0;
-            box-shadow: 0 10px 25px rgba(59, 130, 246, 0.3);
-            transition: transform 0.4s;
-        }
-        
-        .contact-item:hover .contact-icon {
-            transform: rotate(10deg) scale(1.1);
-        }
-        
-        .contact-details h3 {
-            color: var(--light);
-            margin-bottom: 0.8rem;
-            font-size: 1.4rem;
-        }
-        
-        .contact-details p {
-            color: var(--gray);
-            font-size: 1.1rem;
-            line-height: 1.6;
-        }
-        
         /* Footer */
         .footer-content {
             max-width: 800px;
@@ -1245,10 +1286,6 @@
             .contact-container {
                 flex-direction: column;
                 gap: 3rem;
-            }
-            
-            .contact-info {
-                min-width: 100%;
             }
             
             .skills-container {
@@ -1728,7 +1765,7 @@
         </div>
     </section>
 
-    <!-- Contact Section - Enhanced with all contact info -->
+    <!-- Contact Section - HORIZONTAL LAYOUT -->
     <section class="contact-section" id="contact">
         <div class="container">
             <div class="section-title">
@@ -1737,8 +1774,10 @@
             <div class="section-subtitle">
                 Interested in collaborating or have an opportunity? Feel free to reach out using any of the contact methods below.
             </div>
+            
             <div class="contact-container">
-                <div class="contact-info">
+                <div class="contact-grid">
+                    <!-- Phone -->
                     <div class="contact-item">
                         <div class="contact-icon">
                             <i class="fas fa-phone"></i>
@@ -1748,6 +1787,8 @@
                             <p>9512929918</p>
                         </div>
                     </div>
+                    
+                    <!-- Email -->
                     <div class="contact-item">
                         <div class="contact-icon">
                             <i class="fas fa-envelope"></i>
@@ -1757,23 +1798,47 @@
                             <p>shlokkharva@gmail.com</p>
                         </div>
                     </div>
-                    <div class="social-links">
-                        <a href="https://www.linkedin.com/in/shlok-kharva17" target="_blank" title="LinkedIn" aria-label="LinkedIn">
-                            <i class="fab fa-linkedin-in"></i>
-                        </a>
-                        <a href="https://github.com/shlokkharva" target="_blank" title="GitHub" aria-label="GitHub">
-                            <i class="fab fa-github"></i>
-                        </a>
-                        <a href="mailto:shlokkharva@gmail.com" title="Email" aria-label="Email">
-                            <i class="fas fa-envelope"></i>
-                        </a>
-                        <a href="https://www.instagram.com/shlok.py/?utm_source=qr&igsh=MTM5dm9wc3drMHhvcg%3D%3D#" target="_blank" title="Instagram" aria-label="Instagram">
-                            <i class="fab fa-instagram"></i>
-                        </a>
-                        <a href="https://shlokkharva.github.io/shlokportfolio.github.io" target="_blank" title="Portfolio" aria-label="Portfolio">
-                            <i class="fas fa-globe"></i>
-                        </a>
+                    
+                    <!-- Location -->
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Location</h3>
+                            <p>Vadodara, Gujarat</p>
+                        </div>
                     </div>
+                    
+                    <!-- Education -->
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Education</h3>
+                            <p>SVIT Vasad</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Social Links -->
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/shlok-kharva17" target="_blank" title="LinkedIn" aria-label="LinkedIn">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="https://github.com/shlokkharva" target="_blank" title="GitHub" aria-label="GitHub">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="mailto:shlokkharva@gmail.com" title="Email" aria-label="Email">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                    <a href="https://www.instagram.com/shlok.py/?utm_source=qr&igsh=MTM5dm9wc3drMHhvcg%3D%3D#" target="_blank" title="Instagram" aria-label="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://shlokkharva.github.io/shlokportfolio.github.io" target="_blank" title="Portfolio" aria-label="Portfolio">
+                        <i class="fas fa-globe"></i>
+                    </a>
                 </div>
             </div>
         </div>
@@ -2063,6 +2128,25 @@
                 navigator.clipboard.writeText(email).then(() => {
                     const originalText = this.textContent;
                     this.textContent = 'Copied to clipboard!';
+                    this.style.color = 'var(--success)';
+                    
+                    setTimeout(() => {
+                        this.textContent = originalText;
+                        this.style.color = '';
+                    }, 2000);
+                });
+            });
+        }
+        
+        // Add click to copy phone number
+        const phoneElement = document.querySelector('.contact-details p:first-child');
+        if (phoneElement && phoneElement.textContent.match(/\d{10}/)) {
+            phoneElement.style.cursor = 'pointer';
+            phoneElement.addEventListener('click', function() {
+                const phone = this.textContent.trim();
+                navigator.clipboard.writeText(phone).then(() => {
+                    const originalText = this.textContent;
+                    this.textContent = 'Copied!';
                     this.style.color = 'var(--success)';
                     
                     setTimeout(() => {
