@@ -141,7 +141,7 @@ export default function App() {
 function FloatingResumeButton() {
   return (
     <motion.a
-      href="Shlok Kharva.docx"
+      href="/Shlok_Kharva_Resume.pdf"
       download
       className="floating-resume"
       initial={{ opacity: 0, scale: 0 }}

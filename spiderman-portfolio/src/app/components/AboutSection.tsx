@@ -310,7 +310,7 @@ export function AboutSection() {
 
           {/* Download resume button */}
           <WebButton>
-            <a href="Shlok Kharva.docx" download style={{ color: "inherit", textDecoration: "none" }}>Download Resume</a>
+            <a href="/Shlok_Kharva_Resume.pdf" download style={{ color: "inherit", textDecoration: "none" }}>Download Resume</a>
           </WebButton>
         </motion.div>
       </div>
