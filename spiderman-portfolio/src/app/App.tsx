@@ -255,7 +255,7 @@ function Footer() {
           letterSpacing: "0.1em",
         }}
       >
-        © 2024 · Built with 🕷️ · "With great code comes great responsibility"
+        © 2026 · "With great code comes great responsibility"
       </p>
     </footer>
   );
