@@ -1,0 +1,160 @@
+Shlok Kharva
+
+📞9512929918|📧shlokkharva@gmail.com| 💼 Linkedin|     Github |🌐 Portfolio
+
+
+
+About Me
+
+Computer Engineering student with experience in Full-Stack Development, Machine Learning, and Web Development through internships and freelance projects. Skilled in Python, Flask, Node.js, SQL, and cloud deployment. Seeking Software Developer or Machine Learning internship opportunities.
+
+Education: 
+
+B.E. Computer Engineering.                                                                                                                                                                      (2024-Pursuing) 
+
+Gujarat Technological University (GTU) | SVIT Vasad                                                                                                                             CGPA: 7.22
+
+Diploma in Computer Engineering.                                                                                                                                                         (2021-2024)                           
+
+Gujarat Technological University (GTU) | Shree K.J. Polytechnic, Bharuch                                                                                             CGPA: 7.56
+
+Skills: 
+
+Programming Languages: Python, Java, PHP, JavaScript, SQL
+
+Frameworks & Libraries: Flask, Node.js, Next.js, Bootstrap
+
+Databases: MySQL, MongoDB, Firebase
+
+Tools & Platforms: Git, GitHub, Google Cloud, Vercel, GoDaddy, Android Studio
+
+Experience/Internships
+
+Technomax Solutions.                                                                                                                              (Aug2022-Sept2022)Website Development Intern                                                                                                                                                         Bholav, Bharuch, Gujarat
+
+ Developed responsive web applications using HTML, CSS, and Bootstrap. 
+
+Designed and implemented user authentication modules. 
+
+Enhanced cross-browser compatibility and mobile responsiveness. 
+
+Arth Technology.                                                                                                                                      (July2023-Sept2023)Android App Development Intern                                                                                                                                                New VIP Road, Vadodara                                    
+
+Developed Android applications with database connectivity and UI components. 
+
+Built a Task Manager app with secure login and task management features. 
+
+Worked on application testing, debugging, and performance optimization.
+
+Parul chemicals.                                                                                                                                                                                   (April2026-Current)
+
+Full stack Developer intern.                                                                                                                                                       Alkapuri, Vadodara, Gujarat
+
+Rebuilt and deployed the company website using Node.js, Vercel, and GoDaddy. 
+
+Integrated contact form and email automation for customer inquiries. 
+
+Developed and implemented email automation across multiple company websites.
+
+PROJECTS & FREELANCE EXPERIENCE
+
+Vibgyor Maple (Freelance) | Full-Stack Web Developer
+
+Canada-based Business
+
+Developed and deployed a responsive business website using Node.js, creating 5+ dynamic pages and lead-generation workflows.
+
+Optimized performance, accessibility, and mobile responsiveness, achieving 90%+ Lighthouse scores and improving load times by 40%.
+
+Managed end-to-end deployment, hosting, and maintenance on Vercel, ensuring reliable production performance 
+
+Aurbient Technologies (Freelance) | Full-Stack Web Developer
+
+Indore, India-based Technology Company
+
+Built and deployed a corporate website using Node.js, HTML, CSS, and JS, delivering 10+ responsive pages for business operations.
+
+Integrated automated email notifications and contact management workflows, streamlining the handling of 100+ client inquiries.
+
+Managed deployment, optimization, and maintenance through Vercel, improving website performance and user experience across devices.
+
+Disease Prediction System (Machine Learning)
+
+Developed a web-based disease prediction platform using Python, Flask, and Machine Learning, analyzing 5,000+ health records for predictive healthcare insights. 
+
+Trained and optimized multiple ML models, achieving 85%+ prediction accuracy through data preprocessing, feature engineering, and model tuning. 
+
+Built a complete full-stack solution with responsive frontend, backend APIs, and real-time prediction capabilities, delivering results in under 2 seconds.
+
+Cloudburst Prediction System (Machine Learning)
+
+Led a team of 4 developers in building an ML-based cloudburst prediction system using 10,000+ weather data records.
+
+Developed predictive models and data processing pipelines for forecasting extreme weather events and improving analysis efficiency.
+
+Designed and implemented an interactive dashboard featuring 5+ visualizations for monitoring and interpreting prediction results.
+
+Restaurant Management System (Full Stack)
+
+Developed a full-stack restaurant management system using PHP, MySQL, HTML, CSS, Bootstrap, and JavaScript, streamlining restaurant operations through a centralized platform.
+
+Implemented 15+ CRUD modules for menu management, order processing, customer records, inventory tracking, and database administration.
+
+Designed a responsive user interface and managed a database of 1,000+ transaction records, reducing manual operational effort by approximately 60%.
+
+
+
+Achievements & Hackathons
+
+Team Leader — GDG Hackathon 2026 (Medical ML Project)
+
+Team Leader — Mecia Hacks 2024 (Cloudburst ML System)
+
+Participant — Tinkerthon 3.0 (Canteen Management System)
+
+Certifications
+
+SAP – Certified Backend Developer
+
+Microsoft – Introduction to Generative AI
+
+IBM – Agile & Scrum
+
+SAP – Enterprise Systems
+
+. 
+
+Projects: 
+
+Parking Management System (Php, Html, CSS ,SQL).
+
+Simple Tour Packages System Android Application (Java, XML, Android Studios).
+
+CRUD E-COMMERCE website using python(Python, MongoDB, Html, CSS).
+
+Cloudbrust prediction System using machine learning (Python, Html, CSS, Js, Bootstrap, Csv, Machine Learning models, Flask).
+
+Disease prediction System using machine learning (Python, Html, CSS, Js, Bootstrap, Csv, Machine Learning models, Flask).
+
+
+
+Participations:
+
+Mecia Hacks 2024 (SVIT Campus).
+
+I was team leader in which I have built a CloudBurst Prediction System in which I contributed as a fullstack developer.
+
+Tinkerthon 3.0 2025 (NAVRACHANA UNIVERSITY).
+
+I was a team member in which I contributed as a frontend developer on the project Local Canteen Management System for employees in any firm
+
+GDG Hackathon 2026 (By Google Development Group, SVIT).
+
+I was team leader in which I have built a Medical Disease Prediction System using Flask in which I contributed as a fullstack developer.
+
+Be10X AI tools Workshop 2026 (Online).
+
+Attended an AI tools workshop provided by Be10X in which I have learned how to work with AI tools like chatgpt, GenAI, and many more AI tools.
+
+
+
