@@ -7,13 +7,10 @@ const certFiles = import.meta.glob("/public/images/certificates/*.webp", { eager
 const certificates = Object.entries(certFiles).map(([path, url], i) => {
   const filename = path.split("/").pop()?.replace(".webp", "") || `Certificate ${i + 1}`;
   
-  let title = filename.replace(/[-_]/g, " ");
-  // Remove long alphanumeric strings (IDs) from title
-  title = title.replace(/\b[A-Z0-9]{10,}\b/g, "").trim();
-  
   let label = "Certification";
   let priority = 99;
   let color = "#8b9bb4"; // Muted blue
+  let title = filename.replace(/[-_]/g, " ");
 
   const lowerName = filename.toLowerCase();
 
@@ -22,6 +19,12 @@ const certificates = Object.entries(certFiles).map(([path, url], i) => {
     label = "SAP Enterprise";
     priority = 1;
     color = "#38bdf8"; // Light Blue
+    title = lowerName.includes("roa") ? "SAP Record of Achievement" : "SAP 2024 Certification";
+  } else if (lowerName.includes("microsoft") && lowerName.includes("coursera")) {
+    label = "Microsoft Tech";
+    priority = 2;
+    color = "#4ade80"; // Green
+    title = "Microsoft Generative AI";
   } else if (lowerName.includes("microsoft")) {
     label = "Microsoft Tech";
     priority = 2;
@@ -30,26 +33,33 @@ const certificates = Object.entries(certFiles).map(([path, url], i) => {
     label = "IBM Certified";
     priority = 3;
     color = "#60a5fa"; // Blue
+    title = "IBM SkillBuild Certificate";
   } else if (lowerName.includes("coursera")) {
     label = "Coursera Spec.";
     priority = 4;
     color = "#a78bfa"; // Purple
+    title = "Coursera Certification";
   } else if (lowerName.includes("s2s")) {
     label = "S2S Academy";
     priority = 5;
     color = "#f472b6"; // Pink
+    title = "S2S Academy Achievement";
   } else if (lowerName.includes("participation")) {
     label = "Participation";
     priority = 6;
     color = "#fbbf24"; // Yellow
+    title = "Participation Certificate";
   }
 
-  // Give fallback names for weirdly formatted titles after ID removal
-  if (!title || title.length < 2 || title.toLowerCase() === "coursera") {
-    title = `${label} Achievement`;
-  }
-  if (title === "Shlok Kharva" || title === "Certificate") {
-    title = "Professional Certificate";
+  // Fallback for remaining if title wasn't explicitly set above
+  if (title === filename.replace(/[-_]/g, " ")) {
+    title = title.replace(/\b[A-Z0-9]{10,}\b/g, "").trim();
+    if (!title || title.length < 2 || title.toLowerCase() === "coursera") {
+      title = `${label} Achievement`;
+    }
+    if (title.includes("Shlok Kharva") || title === "Certificate") {
+      title = "Professional Certificate";
+    }
   }
 
   return {
