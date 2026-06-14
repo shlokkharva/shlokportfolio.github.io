@@ -11,7 +11,7 @@ const hackathons = [
     description: "Led a team to build a medical disease prediction system. Contributed as a fullstack developer using Flask framework, implemented machine learning models for disease prediction, and designed both frontend and backend components.",
   },
   {
-    title: "Meccia Hacks 2024",
+    title: "Mecia Hacks 2024",
     role: "Team Leader",
     year: "2024",
     organizer: "SVIT Campus",
