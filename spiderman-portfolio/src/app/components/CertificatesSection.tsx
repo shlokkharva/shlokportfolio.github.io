@@ -290,15 +290,7 @@ export function CertificatesSection() {
                 ×
               </button>
               
-              <div style={{ padding: "24px", borderBottom: `1px solid rgba(255,255,255,0.1)` }}>
-                <h3 style={{
-                  fontFamily: "'Rajdhani', sans-serif",
-                  fontSize: "1.5rem",
-                  color: "#fff",
-                  margin: 0
-                }}>{selectedCert.title}</h3>
-                <span style={{ color: selectedCert.color, fontFamily: "'Share Tech Mono', monospace", fontSize: "0.9rem" }}>{selectedCert.label}</span>
-              </div>
+
 
               <div style={{ width: "100%", background: "#fff", display: "flex", justifyContent: "center", padding: "10px" }}>
                 <img 
