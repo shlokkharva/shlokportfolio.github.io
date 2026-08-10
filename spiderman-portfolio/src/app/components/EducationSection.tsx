@@ -7,7 +7,7 @@ const education = [
     degree: "B.E. Computer Engineering",
     school: "Gujarat Technological University (GTU) | SVIT Vasad",
     period: "2024 - Pursuing",
-    cgpa: "7.22",
+    cgpa: "8.13",
   },
   {
     id: 2,
