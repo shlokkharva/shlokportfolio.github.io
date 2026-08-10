@@ -1,4 +1,5 @@
 import { motion } from "motion/react";
+import { Analytics } from "@vercel/analytics/react";
 import { ParticleWeb } from "./components/ParticleWeb";
 import { Navbar } from "./components/Navbar";
 import { HeroSection } from "./components/HeroSection";
@@ -134,6 +135,7 @@ export default function App() {
       </div>
       {/* Floating Download Resume Button */}
       <FloatingResumeButton />
+      <Analytics />
     </div>
   );
 }
